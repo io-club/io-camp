@@ -4,7 +4,7 @@
 
 - 每周都有作业，必须完成
 
-- 代码风格参考（大概看看就行）：Google 发布的《Go 代码规范》( [01 Overview | Google Style Guides (gocn.github.io)](https://gocn.github.io/styleguide/docs/01-overview/))
+- 代码风格参考 (大概看看就行): Google 发布的《Go 代码规范》[Google Style Guides](https://gocn.github.io/styleguide/docs/01-overview/)
 - 该方案并不需要你学习的多深入，里面的大概了解基础就行，到有需求时能知道有这么个东西，能去找出来用（但个人有时间时可以对提到的内容加深、扩展，更之后的时间参考扩展内容）
 
 > 有些英文文档可以使用浏览器翻译配合着看，推荐翻译插件：[沉浸式翻译](https://immersivetranslate.com/)：最受欢迎的双语对照网页翻译插件
@@ -13,10 +13,28 @@
 
 ### 作业：memory todolist
 
-数据在内存中的 todolist
+数据保存在内存中的待做清单
 
-- 实现  **增删改查**  4 个接口
-  - 请自行设计路由，学习 RESTful API，参考：\<[https://www.ruanyifeng.com/blog/2014/05/restful\_api.html](https://www.ruanyifeng.com/blog/2014/05/restful_api.html)\>
+- 实现  **增删改查，列出全部**  共 5 个接口
+  - 请自行设计路由，学习 RESTful API，参考：[ruanyifeng restful_api](https://www.ruanyifeng.com/blog/2014/05/restful_api.html)
+  - 参考：
+    ```shell
+    > curl -X GET http://127.0.0.1:8080/tasks
+    {
+      "tasks":[
+        {
+            "id":1,
+            "title":"吃饭",
+            "completed":false
+        },
+        {
+            "id":2,
+            "title":"睡觉",
+            "completed":true
+        }
+      ]
+    }
+    ```
 - 使用 curl 进行测试
   - 注意保留测试的 curl 脚本及结果，一并上传到代码仓库中
     - 学习 curl 基本使用，并尝试在终端发出 HTTP 请求，例如 `curl -X GET [http://127.0.0.1:8080/ping`](<http://127.0.0.1:8080/ping%60>), 和上面直接在浏览器访问应该能得到相同结果
@@ -92,20 +110,6 @@
 - Grpc 服务
 
   - 怎么创建 grpc 的客户端、服务端并使其能正常交互
-
-## 作业
-
-当你完成了上述任务后，需要将代码提交至 github 仓库
-
-你需要：
-
-- 学习 git 的基本使用
-- 了解 fork，如何通过 PR 提交代码
-- 访问 \<[**GitHub Dashboard --- GitHub**](https://github.com/dashboard)\> 创建 github 账号，@我，我会给你相关仓库的访问权限
-  - 记得给 github 加个昵称（下图的自定义名称处）
-- 提交 PR，我会审核代码
-
-🎉 最后就是正式参与项目开发啦 🎉
 
 ## 附录
 
