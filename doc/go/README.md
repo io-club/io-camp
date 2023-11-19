@@ -1,15 +1,15 @@
 # 后端培养方案
 
-## 任务要求
-
 ## 前言
+
+- 每周都有作业，必须完成
 
 - 代码风格参考（大概看看就行）：Google 发布的《Go 代码规范》( [01 Overview | Google Style Guides (gocn.github.io)](https://gocn.github.io/styleguide/docs/01-overview/))
 - 该方案并不需要你学习的多深入，里面的大概了解基础就行，到有需求时能知道有这么个东西，能去找出来用（但个人有时间时可以对提到的内容加深、扩展，更之后的时间参考扩展内容）
 
 > 有些英文文档可以使用浏览器翻译配合着看，推荐翻译插件：[沉浸式翻译](https://immersivetranslate.com/)：最受欢迎的双语对照网页翻译插件
 
-## 第一周
+## 第一/二周
 
 ### 作业：memory todolist
 
@@ -22,7 +22,6 @@
     - 学习 curl 基本使用，并尝试在终端发出 HTTP 请求，例如 `curl -X GET [http://127.0.0.1:8080/ping`](<http://127.0.0.1:8080/ping%60>), 和上面直接在浏览器访问应该能得到相同结果
     - 至于 curl 如何发送 POST 等其他请求方法，如何添加 form，json 等参数请自行搜索文档（熟练使用搜索引擎是程序员的必备技能）
   - 也可以使用 apifox，postman 进行测试，使用更加方便
-
 - 学习 git 的基本操作（如 pull,push）
   - **！建议周六周日做完就先注册 **** github ****，并把这个 **** TODO list  **提交到代码仓库（可参考：** [github](https://blog.csdn.net/gentleman_hua/article/details/123816150?spm=1001.2014.3001.5506)提交 pr\_提交 pr 是什么意思\_@才华有限公司的博客-CSDN 博客 **）**
   - **forks 学习↓**
@@ -42,7 +41,7 @@
   - 了解三种类型参数的获取方法（path，form，json），并实现自动的 **参数校验** 和 **参数绑定**
     - 参考：\<[https://gin-gonic.com/zh-cn/docs/examples/binding-and-validation/](https://gin-gonic.com/zh-cn/docs/examples/binding-and-validation/)\>
 
-## 第二周
+## 第三/四周
 
 ### 作业：db todolist
 
