@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = ".;service";
+
+service PostUser{
+    rpc GetUser(PostUserReq) returns (PostUserRes){}
+}
+
+message PostUserReq{
+    string User = 1;
+    string Password = 2;
+}
+
+message PostUserRes{
+    string User = 1;
+    string Password = 2;
+}
