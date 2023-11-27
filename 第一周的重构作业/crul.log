@@ -1,0 +1,11 @@
+
+$ curl localhost:8080/GetUser
+{"message":[{"user":"b","password":"456"},{"user":"a","password":"123"}]}
+
+$ curl -X POST -d '{"User": "ylx", "password": "123"}' localhost:8080/LoginUser
+
+$  curl -X PUT localhost:8080/ChangeUser0
+{"message":[{"user":"q","password":"456"},{"user":"a","password":"123"}]}
+
+$  curl -X DELETE localhost:8080/DeleteUser0
+{"message":[{"user":"a","password":"123"}]}
