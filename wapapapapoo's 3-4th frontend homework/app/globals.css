@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-logo::before {
+	display: inline-block;
+	content: "IO";
+	padding-left: .25em;
+	padding-right: .2em;
+	color: white;
+	background-color: black;
+	font-size: 1.3em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: light;
+	font-style: normal;
+}
+
+.text-logo::after {
+	display: inline-block;
+	box-sizing: border-box;
+	content: "tdl";
+	margin-left: .2em;
+	color: black;
+	font-size: 1.6em;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: lighter;
+	font-variant: small-caps;
+	font-style: normal;
+}
