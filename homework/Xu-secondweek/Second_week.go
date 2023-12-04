@@ -16,7 +16,8 @@ import (
 )
 
 var db *gorm.DB
-var user User
+
+// var user User
 var users []User
 
 // github.com/mattn/go-sqlite3
@@ -35,7 +36,7 @@ type User struct {
 }
 
 func CreateUser(c *gin.Context) {
-	//var user User
+	var user User
 	//var db *gorm.DB
 	user.Age = c.DefaultPostForm("age", "")
 
@@ -59,7 +60,7 @@ func CreateUser(c *gin.Context) {
 
 func SelectOneUser(c *gin.Context) {
 	//var db *gorm.DB
-	//var user User
+	var user User
 
 	db.Where("id = ?", c.Param("id")).First(&user)
 
@@ -75,22 +76,28 @@ func Paginate(c *gin.Context) {
 	//var r *http.Request
 
 	q := c.Request.URL.Query()
-	page, _ := strconv.Atoi(q.Get("page")) // 用于将字符串类型转换为int类型
+	page, Err := strconv.Atoi(q.Get("page")) // 用于将字符串类型转换为int类型
 	if page <= 0 {
 		page = 1
 	}
+	if Err != nil {
+		return
+	}
 
 	pageSize, _ := strconv.Atoi(q.Get("page_size"))
+	if Err != nil {
+		return
+	}
 
 	offset := (page - 1) * pageSize
 	var users []User
-	result := db.Offset(offset).Limit(pageSize).Find(&users)
+	err := db.Offset(offset).Limit(pageSize).Find(&users).Error
 	// 对单个对象使用Find而不带limit，db.Find(&user)将会查询整个表并且只返回第一个对象
 
 	// result := db.Find(&users)
 	//err := result.Error
-	if result.Error != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": result.Error})
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
@@ -101,28 +108,28 @@ func Paginate(c *gin.Context) {
 
 func UpdateOneUser(c *gin.Context) {
 	//var db *gorm.DB
-	//var user User
+	var user User
 
 	user.Name = c.DefaultPostForm("name", "Tom")
-	user.Id = c.Param("id")
+	// user.Id = c.Param("id")
 	user.Age = c.PostForm("age")
 
 	db.Model(&user).Updates(map[string]interface{}{
 		"name": user.Name,
-		"id":   user.ID,
-		"age":  user.Age,
+		// "id":   user.ID,
+		"age": user.Age,
 	})
 
 	c.JSON(http.StatusOK, gin.H{
 		"name": user.Name,
-		"id":   user.ID,
-		"age":  user.Age,
+		// "id":   user.ID,
+		"age": user.Age,
 	})
 }
 
 func DeleteUser(c *gin.Context) {
 	//var db *gorm.DB
-	//var user User
+	var user User
 	user.Id = c.Param("id")
 	c.JSON(http.StatusOK, gin.H{
 		"id": c.Param("id"),
