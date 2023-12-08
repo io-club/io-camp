@@ -1,13 +1,13 @@
 # 2023 IO 俱乐部技术训练营
 
 欢迎各位大一大二同学参加 IO 开源技术训练营，本活动开设了多个方向，相关学习文档资料均保存在：
-https://github.com/io-club/io-camp
+<https://github.com/io-club/io-camp>
 
 - 各个方向请查看 doc 目录
-  - [Go 后端学习路线](./doc/go/README.md)
-  - [前端学习路线](./doc/react/README.md)
-  - [嵌入式 Arduino 学习路线](./doc/arduino/README.md)
-  - [安卓 TODO](./doc/android/README.md)
+  - [后端 - Go](./doc/go/README.md)
+  - [前端 - HTML - REACT](./doc/react/README.md)
+  - [嵌入式 - Arduino](./doc/arduino/README.md)
+  - [安卓 - XML](./doc/android/README.md)
 
 ## 目标
 
@@ -24,8 +24,8 @@ https://github.com/io-club/io-camp
 
 ## 要求 / 注意事项
 
-- 作业 **必须提交**, 请提交至 **homework** 文件夹
-- 文档使用 README 编写
+- 作业 **必须提交**, 请提交至 **homework** 文件夹，评价只会根据作业完成情况进行
+- 如果需要编写文档，禁止使用 word, 建议使用 markdown
 
 ## 作业
 
@@ -43,3 +43,5 @@ https://github.com/io-club/io-camp
 - 每周末发起视频会议进行答疑
 
 ## 优秀 blog 推荐
+
+- [某鸽](https://c.rcex.live:8/)
